@@ -1,1 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Pra você, Bella ❤️</title>
 
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to bottom, #000000, #1a1a1a);
+      color: #fff;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      overflow-x: hidden;
+    }
+
+    .container {
+      padding: 30px 20px;
+    }
+
+    h1 {
+      font-size: 28px;
+    }
+
+    p {
+      opacity: 0.8;
+    }
+
+    video {
+      width: 90%;
+      max-width: 500px;
+      margin-top: 30px;
+      border-radius: 12px;
+    }
+
+    .petal {
+      position: fixed;
+      top: -20px;
+      font-size: 20px;
+      animation: fall linear forwards;
+      z-index: 999;
+    }
+
+    @keyframes fall {
+      to {
+        transform: translateY(110vh) rotate(360deg);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+  <h1>Feliz Páscoa, Bella ❤️</h1>
+  <p>Se você chegou até aqui… é porque isso foi feito pra você.</p>
+  <div class="heart">❤️</div>
+  <video controls>
+    <source src="C:\Users\F1RK\OneDrive - PETROBRAS\Área de Trabalho\site teste\Bella páscoa.mp4" type="video/mp4">
+  </video>
+
+  <p>Com amor, Rhian 💘</p>
+</div>
+
+<script>
+function createPetal() {
+  const petal = document.createElement("div");
+  petal.classList.add("petal");
+  petal.innerHTML = "🌹";
+
+  petal.style.left = Math.random() * window.innerWidth + "px";
+  petal.style.animationDuration = (Math.random() * 4 + 4) + "s";
+  petal.style.fontSize = (Math.random() * 10 + 15) + "px";
+
+  document.body.appendChild(petal);
+
+  setTimeout(() => {
+    petal.remove();
+  }, 8000);
+}
+
+setInterval(createPetal, 200);
+</script>
+
+</body>
+</html>
